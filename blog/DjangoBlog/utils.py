@@ -224,7 +224,7 @@ def save_user_avatar(url):
     logger.info(url)
     try:
         imgname = url.split('/')[-1]
-        if imgname:Í
+        if imgname:
             path = r'{basedir}/avatar/{img}'.format(basedir=setting.resource_path, img=imgname)
             if os.path.exists(path):
                 os.remove(path)
