@@ -5,7 +5,7 @@ upstream hello_app_server {
 server {
 
 
-	server_name blog.lylinux.org;
+	server_name blog.alexuhui.win;
 	root /var/www/DjangoBlog/;
 
 	listen 80;

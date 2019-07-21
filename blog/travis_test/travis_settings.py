@@ -29,7 +29,7 @@ DEBUG = True
 TESTING = len(sys.argv) > 1 and sys.argv[1] == 'test'
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['www.lylinux.net', '127.0.0.1', 'example.com']
+ALLOWED_HOSTS = ['www.alexuhui.net', '127.0.0.1', 'example.com']
 # Application definition
 
 
@@ -169,7 +169,7 @@ TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 DATE_TIME_FORMAT = '%Y-%m-%d'
 
 SITE_NAME = '且听风吟'
-SITE_URL = 'http://www.lylinux.net'
+SITE_URL = 'http://www.alexuhui.net'
 SITE_DESCRIPTION = '大巧无工,重剑无锋.'
 SITE_SEO_DESCRIPTION = '小站主要用来分享和记录学习经验,教程,记录个人生活的点滴以及一些随笔.欢迎大家访问小站'
 SITE_SEO_KEYWORDS = 'linux,apache,mysql,服务器,ubuntu,shell,web,csharp,.net,asp,mac,swift'
@@ -208,27 +208,27 @@ OAHUTH = {
     'sina': {
         'appkey': '3161614143',
         'appsecret': 'ee17c099317f872eeddb25204ea46721',
-        'callbackurl': 'http://www.lylinux.net/oauth/authorize?type=weibo'
+        'callbackurl': 'http://www.alexuhui.net/oauth/authorize?type=weibo'
     },
     'google': {
         'appkey': 'googleappkey',
         'appsecret': 'googleappsecret',
-        'callbackurl': 'http://www.lylinux.net/oauth/authorize?type=google'
+        'callbackurl': 'http://www.alexuhui.net/oauth/authorize?type=google'
     },
     'github': {
         'appkey': 'githubappkey',
         'appsecret': 'githubappsecret',
-        'callbackurl': 'http://www.lylinux.net/oauth/authorize?type=github'
+        'callbackurl': 'http://www.alexuhui.net/oauth/authorize?type=github'
     },
     'facebook': {
         'appkey': 'facebookappkey',
         'appsecret': 'facebookappsecret',
-        'callbackurl': 'http://www.lylinux.net/oauth/authorize?type=facebook'
+        'callbackurl': 'http://www.alexuhui.net/oauth/authorize?type=facebook'
     }
 }
 
 SITE_ID = 1
-BAIDU_NOTIFY_URL = "http://data.zz.baidu.com/urls?site=https://www.lylinux.net&token=1uAOGrMsUm5syDGn&type=original"
+BAIDU_NOTIFY_URL = "http://data.zz.baidu.com/urls?site=https://www.alexuhui.net&token=1uAOGrMsUm5syDGn&type=original"
 
 # Emial:
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

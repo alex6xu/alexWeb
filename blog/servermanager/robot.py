@@ -7,7 +7,7 @@
 @author: liangliangyy
 @license: MIT Licence 
 @contact: liangliangyy@gmail.com
-@site: https://www.lylinux.net/
+
 @software: PyCharm
 @file: robot.py
 @time: 2017/8/27 上午1:55
@@ -26,7 +26,7 @@ from django.conf import settings
 import jsonpickle
 from servermanager.models import commands
 
-robot = WeRoBot(token='lylinux', enable_session=True)
+robot = WeRoBot(token='alexuhui', enable_session=True)
 memstorage = MemcacheStorage()
 if memstorage.is_available:
     robot.config['SESSION_STORAGE'] = memstorage

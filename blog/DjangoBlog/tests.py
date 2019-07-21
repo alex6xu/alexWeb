@@ -7,8 +7,8 @@
 @author: liangliangyy
 @license: MIT Licence 
 @contact: liangliangyy@gmail.com
-@site: https://www.lylinux.net/
-@software: PyCharm
+
+@software: PyCharmf
 @file: tests.py
 @time: 2017/10/25 下午10:16
 """
@@ -36,7 +36,7 @@ class DjangoBlogTest(TestCase):
         import os
         ```  
         
-        [url](https://www.lylinux.net/)  
+        [url](https://www.alexuhui.net/)  
           
         [ddd](http://www.baidu.com)  
         

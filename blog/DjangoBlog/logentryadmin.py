@@ -7,7 +7,7 @@
 @author: liangliangyy
 @license: MIT Licence 
 @contact: liangliangyy@gmail.com
-@site: https://www.lylinux.net/
+
 @software: PyCharm
 @file: logentryadmin.py
 @time: 2018/5/24 下午10:37

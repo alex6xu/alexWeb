@@ -5,7 +5,7 @@
 @author: liangliangyy
 @license: MIT Licence 
 @contact: liangliangyy@gmail.com
-@site: https://www.lylinux.net/
+
 @software: PyCharm
 @file: documents.py
 @time: 2019-04-05 13:05

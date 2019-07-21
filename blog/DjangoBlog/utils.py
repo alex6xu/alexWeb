@@ -7,7 +7,7 @@
 @author: liangliangyy
 @license: MIT Licence
 @contact: liangliangyy@gmail.com
-@site: https://www.lylinux.net/
+
 @software: PyCharm
 @file: utils.py
 @time: 2017/1/19 上午2:30
@@ -224,7 +224,7 @@ def save_user_avatar(url):
     logger.info(url)
     try:
         imgname = url.split('/')[-1]
-        if imgname:
+        if imgname:Í
             path = r'{basedir}/avatar/{img}'.format(basedir=setting.resource_path, img=imgname)
             if os.path.exists(path):
                 os.remove(path)
@@ -244,7 +244,7 @@ def save_user_avatar(url):
             logger.info('保存用户头像:' + basepath + savefilename)
             with open(basepath + savefilename, 'wb+') as file:
                 file.write(rsp.content)
-            return 'https://resource.lylinux.net/avatar/' + savefilename
+            return 'https://resource.alexuhui.net/avatar/' + savefilename
     except Exception as e:
         logger.error(e)
         return url

@@ -5,7 +5,7 @@
 @author: liangliangyy
 @license: MIT Licence
 @contact: liangliangyy@gmail.com
-@site: https://www.lylinux.net/
+
 @software: PyCharm
 @file: elasticsearch_backend.py
 @time: 2019-04-13 11:46
