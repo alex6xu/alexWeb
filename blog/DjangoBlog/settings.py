@@ -98,12 +98,12 @@ WSGI_APPLICATION = 'DjangoBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': 'djangoblog',
+        'NAME': 'djangoblog',
         # 'USER': "root",
         # 'PASSWORD': "Abcd1234",
         # 'HOST': "127.0.0.1",
         # 'PORT': 3306,
-        'OPTIONS': {'charset': 'utf8mb4'},
+        # 'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
 
