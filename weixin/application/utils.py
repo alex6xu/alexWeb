@@ -5,7 +5,10 @@ from io import StringIO
 import requests
 # from StringIo import
 from django.conf import settings
+from logging import getLogger
 from wechatpy import WeChatClient
+
+logger = getLogger('app')
 
 st = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
 

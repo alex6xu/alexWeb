@@ -1,31 +1,30 @@
 #coding=utf-8
 
 import os
-import sys
 import aiml
-
-from django.conf import settings
+from flask import current_app as app
 
 __name__ = 'talkbot'
+conf = app.conf
 
 
 class TalkBot(aiml.Kernel):
     def __init__(self):
         super(TalkBot, self).__init__()
-        self.verbose(settings.DEBUG)
-        if os.path.exists(settings.TALKBOT_BRAIN_PATH):
-            self.bootstrap(brainFile=settings.TALKBOT_BRAIN_PATH)
+        # self.verbose(settings.DEBUG)
+        if os.path.exists(app.config.get('TALKBOT_BRAIN_PATH')):
+            self.bootstrap(brainFile=app.config.get('TALKBOT_BRAIN_PATH'))
         else:
             self.init_bot()
-            self.saveBrain(settings.TALKBOT_BRAIN_PATH)
+            self.saveBrain(app.config.get('TALKBOT_BRAIN_PATH'))
 
-        for p in settings.TALKBOT_PROPERTIES:
-            self.setBotPredicate(p, settings.TALKBOT_PROPERTIES[p])
+        for p in app.config.get('TALKBOT_PROPERTIES'):
+            self.setBotPredicate(p, app.config.get('TALKBOT_PROPERTIES')[p])
 
     def init_bot(self):
-        for f in os.listdir(settings.AIML_SET):
+        for f in os.listdir(app.config.get('AIML_SET')):
             if f.endswith('.aiml'):
-                self.learn(os.path.join(settings.AIML_SET, f))
+                self.learn(os.path.join(app.config.get('AIML_SET'), f))
 
 
 talkbot = TalkBot()
