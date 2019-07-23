@@ -26,14 +26,14 @@ def wechat_msg():
     sign = request.args.get('signature', '')
     timestamp = request.args.get('timestamp', '')
     nonce = request.args.get('nonce', '')
-    # echostr = request.args.get('echostr', '')
+    echostr = request.args.get('echostr', '')
 
     if request.method == 'GET':
         try:
             check_signature(token, sign, timestamp, nonce)
         except InvalidSignatureException:
             logger.warning("Signature check failed.")
-        return Response('ok')
+        return Response(echostr)
 
     header = {"content_type": "application/xml;charset=utf-8"}
     body = request.data
