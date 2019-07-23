@@ -1,6 +1,6 @@
 #/python3 encode=utf8
 # Create your models here.
-from .database import db
+from application.database import db
 from sqlalchemy import Column, Date, DateTime, TIMESTAMP, Integer, String, text, PickleType, Text
 
 Base = db.Model

@@ -1,5 +1,0 @@
-# -*- coding: utf-8 -*-
-
-
-# The Kernel class is the only class most implementations should need.
-from .Kernel import Kernel

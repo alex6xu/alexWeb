@@ -1,19 +1,28 @@
-from flask import g, request, Response, current_app as app
+from flask import request, Response
 from flask import Blueprint
 from wechatpy import parse_message, create_reply
 from wechatpy.utils import check_signature
 from wechatpy.exceptions import InvalidSignatureException
 from wechatpy.replies import ImageReply
-from .talkbot import respond
-from .utils import logger, weChatClient, image_process
+
+from application.utils import logger, image_process
+from application import talkbot, app, weChatClient
 
 
 bp_wechat = Blueprint('weichat', __name__, url_prefix='/wechat')
 
 
+def respond(data, session=None):
+
+    resp = talkbot.respond(data, session)
+    if ' ' in resp:
+        resp = ''.join(resp.split(' '))
+    return resp
+
+
 @bp_wechat.route('/call', methods=['GET', 'POST'])
 def wechat_msg():
-    token = app.conf.get('WX_TOKEN')
+    token = app.config.get('WX_TOKEN')
     sign = request.args.get('signature', '')
     timestamp = request.args.get('timestamp', '')
     nonce = request.args.get('nonce', '')

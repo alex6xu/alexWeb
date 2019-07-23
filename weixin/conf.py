@@ -9,6 +9,7 @@
 import os
 import socket
 from datetime import timedelta
+import logging
 
 # # 网站运营配置
 # from .settings import *
@@ -52,38 +53,7 @@ DB_MONGO = {
 }
 
 
-MONGO_URI = ''
-
-RABBIT_MQ = {
-    'host': '',
-    'user': 'xjd_data',
-    'password': 'ZXAMnYmIaeOnGi6SgzBQ',
-    'virtual_host': 'xjd_data',
-    'exchange': 'teldetail',
-    'port': 25672
-}
-
-EXCHANGE_NAME = 'data_interface'
-
 CSRF_ENABLED = True
-SECRET_KEY = '\x03\xabjR\xbbg\x82\x0b{\x96f\xca\xa8\xbdM\xb0x\xdbK%\xf2\x07\r\x8c'
-
-# 会话配置
-# PERMANENT_SESSION_LIFETIME = timedelta(minutes=20)             # 登录状态保持，默认31天
-REMEMBER_COOKIE_DURATION = timedelta(days=14)  # 记住登录状态，默认365天
-LOGIN_MESSAGE = u'请登录后操作'
-LOGIN_MESSAGE_CATEGORY = 'warning'  # 默认'message'
-
-# 后台登录前台配置
-ADMIN_TO_USER_LOGIN_TIME_OUT = 1200
-ADMIN_TO_USER_LOGIN_SIGN_KEY = ' '
-
-# 文件上传配置
-UPLOAD_FOLDER = os.path.join(BASE_DIR, 'media/uploads/')
-# ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-MAX_CONTENT_LENGTH = 2.6 * 1024 * 1024  # 2.6Mb
-MIN_CONTENT_LENGTH = 2.0 * 1024  # 2.0Kb
 
 # 日志参数配置
 LOG_CONFIG = {
@@ -98,30 +68,28 @@ LOG_CONFIG = {
             'class': 'logging.StreamHandler',
             'formatter': 'detail',
             'level': 'DEBUG'
-        },
-        'file_app': {
-            'class': 'logging.handlers.TimedRotatingFileHandler',
-            'formatter': 'detail',
-            'level': 'DEBUG',
-            'when': 'D',
-            'filename': BASE_DIR + '/logs/app.log'
-        },
-        'file_db': {
-            'class': 'logging.handlers.TimedRotatingFileHandler',
-            'formatter': 'detail',
-            'level': 'DEBUG',
-            'when': 'D',
-            'filename': BASE_DIR + '/logs/db.log'
         }
     },
     'loggers': {
         'app': {
-            'handlers': ['console', 'file_app'],
-            'level': 'DEBUG'
-        },
-        'db': {
-            'handlers': ['file_db'],
+            'handlers': ['console'],
             'level': 'DEBUG'
         }
     }
 }
+
+
+#weixin
+WX_APPID = 'wxd1d8bc45f048100c'
+WX_APPKEY =  os.getenv("wx_appkey")
+WX_TOKEN = "wxtoken"
+USER_NAME = "Alex"
+# SIMSIMI_KEY =  os.getenv("SIMSIMS_KEY")
+TALKBOT_PROPERTIES = {'name': USER_NAME,
+                      "master": USER_NAME,
+                      'birthday': '',
+                      'gender': '直男',
+                      'city': '上海',
+                      'os': 'OS X'}
+TALKBOT_BRAIN_PATH = os.path.join(BASE_DIR, 'brain.txt')
+AIML_SET = os.path.join(BASE_DIR, 'aiml_set')

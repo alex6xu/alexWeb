@@ -3,10 +3,8 @@ import imageio as gio
 import cv2
 from io import StringIO
 import requests
-# from StringIo import
-from django.conf import settings
+# from . import app
 from logging import getLogger
-from wechatpy import WeChatClient
 
 logger = getLogger('app')
 
@@ -54,7 +52,6 @@ def trans_image(f):
         gio.mimsave(output, A, 'gif', duration=0.1)
     return output
 
-weChatClient = WeChatClient(settings.WX_APPID, settings.WX_APPKEY)
 
 
 def image_process(img):
