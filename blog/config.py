@@ -19,6 +19,7 @@ class Config():
     # you must do this for yourself to use the wtf, more about this, you can
     # take a reference to the book <<Flask Framework Cookbook>>.
     # But the book only have the version of English.
+    APPKEY = os.environ.get('APP_KEY')
 
     @staticmethod
     def init_app(app):

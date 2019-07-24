@@ -35,6 +35,8 @@ def wechat_msg():
             logger.warning("Signature check failed.")
         return Response(echostr)
 
+    # if request.method == "POST":
+
     header = {"content_type": "application/xml;charset=utf-8"}
     body = request.data
     logger.info(body)
