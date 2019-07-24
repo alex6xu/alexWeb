@@ -34,7 +34,7 @@ def logout():
     return redirect(url_for('main.index'))
 
 
-@auth.route('/notify', methods=['GET', 'POST'])
+# @auth.route('/notify', methods=['GET', 'POST'])
 def notify():
     appkey = current_app.config.get('APPKEY')
     auth_client = WxAuthToken(appid, appkey)

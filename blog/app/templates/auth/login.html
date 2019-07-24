@@ -43,7 +43,7 @@
                         <button type="submit" class="btn btn-default">登录</button>
                     </div>
                     <div class="col-sm-offset-3 col-sm-9">
-                        <button type="submit" class="btn btn-default" onclick="auth_test()">微信登录</button>
+                        <!--<button type="submit" class="btn btn-default" onclick="auth_test()">微信登录</button>-->
                     </div>
                 </div>
             </form>
@@ -53,16 +53,15 @@
 
 <script src="{{ url_for('static', filename='js/jquery-2.2.1.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-<script>
-        var appid= "wxd1d8bc45f048100c" ;// appid
-        var cburl = 'http://blog.alexuhui.win/auth/notify'; // 回调链接地址，需转码为URI格式，必须去除#后的参数
-        var scope = 'snsapi_userinfo'; // snsapi_base静默授权，snsapi_userinfo弹出授权页面
-        var state= '8'; // 重定向带的参数
-        var wx_auth_url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appid + "&redirect_uri=" + cburl + "&response_type=code&scope=" + scope + "&state=" + state + "&connect_redirect=1#wechat_redirect";
+<!--<script>-->
+        <!--var cburl = 'http://blog.alexuhui.win/auth/notify'; // 回调链接地址，需转码为URI格式，必须去除#后的参数-->
+        <!--var scope = 'snsapi_userinfo'; // snsapi_base静默授权，snsapi_userinfo弹出授权页面-->
+        <!--var state= '8'; // 重定向带的参数-->
+        <!--var wx_auth_url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + appid + "&redirect_uri=" + cburl + "&response_type=code&scope=" + scope + "&state=" + state + "&connect_redirect=1#wechat_redirect";-->
 
-        function auth_test() {
-            window.location.href = wx_auth_url
-        }
-    </script>
+        <!--function auth_test() {-->
+            <!--window.location.href = wx_auth_url-->
+        <!--}-->
+    <!--</script>-->
 </body>
 </html>
