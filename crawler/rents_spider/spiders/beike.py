@@ -18,6 +18,7 @@ class BeikeSpider(scrapy.Spider):
             
                 }
     url = 'https://sh.zu.ke.com/ditiezufang/li143685059s100021926/rt200600000001l2l1/'
+
     def start_requests(self):
         yield scrapy.Request(url=self.url,callback= self.parse,method='GET',headers=self.headers,dont_filter=True)
        

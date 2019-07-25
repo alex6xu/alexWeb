@@ -14,10 +14,12 @@ class DoubanSpider(scrapy.Spider):
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
             
                 }
+
     def start_requests(self):
         url = 'https://www.douban.com/group/shanghaizufang/discussion?start='
         for i in range(30):
             yield scrapy.Request(url=url+str(i*25),headers =self.headers,callback=self.parse,dont_filter=True)
+
     def parse(self, response):
         soup = BeautifulSoup(response.body,'lxml',from_encoding='utf-8')
         olt = soup.find('table', attrs={'class':'olt'})
@@ -27,8 +29,6 @@ class DoubanSpider(scrapy.Spider):
                      url = item.find('a').attrs['href']
                      detail ={'url':url}
                      yield scrapy.Request(url=url,meta=detail,headers =self.headers, callback=self.parse_detail,dont_filter=True)
-
-
 
     def parse_detail(self,response):
         detail = response.meta
@@ -61,6 +61,7 @@ class DoubanSpider(scrapy.Spider):
             #        print('Search content:',matchResult.group(i),'Start from:',matchResult.start(i),'End at:',matchResult.end(i),'Its span is:',matchResult.span(i))
         print(detail)
             #self.insertDB(detail)
+
     def insertDB(self,detail):
         db= pymysql.connect(host="localhost",user="root",charset='utf8',
         password="password",db="db_rm",port=3306)
@@ -69,7 +70,7 @@ class DoubanSpider(scrapy.Spider):
         try:
             cursor.execute(sql,('豆瓣租房','上海',detail['title'],detail['woner'],detail['release_time'],detail['address_dec'],detail['pic_list']))
             db.commit()
-        except:
+        except Exception as e:
             print(e)
             print("---------------------插入失败------------------------")
             db.rollback()
