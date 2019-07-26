@@ -1,0 +1,59 @@
+<import src="../common/header.wxml" />
+<import src="../common/footer.wxml" />
+
+<view class="search-container">
+  <input type="text" bindinput="searchInputEvent" placeholder="搜索"></input>
+  <icon bindtap="searchClickEvent" type="search" size="20" />
+</view>
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 开始享用 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class="page_bd">
+    <view class="section">
+      <view class="section__title">热门表情</view>
+      <view class="flex-wrp" style="flex-direction:row;">
+        <view wx:for="{{hotimages}}">
+          <image class="flex-item" src="{{item}}" />
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section__title">全部表情</view>
+      <view class="flex-wrp" style="flex-direction:row;">
+        <view wx:for="{{images1}}">
+          <image class="flex-item" src="{{item}}" />
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="flex-wrp" style="flex-direction:row;">
+          <view wx:for="{{images2}}">
+          <image class="flex-item" src="{{item}}" />
+        </view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="flex-wrp" style="flex-direction:row;">
+        <view wx:for="{{images3}}">
+          <image class="flex-item" src="{{item}}" />
+        </view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="flex-wrp" style="flex-direction:row;">
+        <view wx:for="{{images4}}">
+          <image class="flex-item" src="{{item}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

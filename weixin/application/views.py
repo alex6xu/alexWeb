@@ -4,7 +4,8 @@ from wechatpy import parse_message, create_reply
 from wechatpy.utils import check_signature
 from wechatpy.exceptions import InvalidSignatureException
 from wechatpy.replies import ImageReply
-
+import sqlite3
+import json
 from application.utils import logger, image_process
 from application import talkbot, app, weChatClient
 
@@ -77,3 +78,11 @@ def wechat_msg():
 
     else:
         logger.info('message type unknown')
+
+
+@bp_wechat.route('/images', methods=['GET', 'POST'])
+def wechat_images():
+    sqlite_conn = sqlite3.connect('../../image.db')
+    sql = 'select url from image limit 20;'
+    result = sqlite_conn.execute(sql)
+    return Response(json.dumps({'images': result}))
