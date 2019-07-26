@@ -1,6 +1,6 @@
 import sqlite3
 
-sqlite_conn = sqlite3.connect('../../../image.db')
+sqlite_conn = sqlite3.connect('../../image.db')
 
 try:
     sqlite_conn.execute('''create table if not exists image(
