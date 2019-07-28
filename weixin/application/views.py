@@ -105,3 +105,8 @@ def wechat_images():
             num = 2
 
     return Response(json.dumps({'images': image['1'], 'image1': image['2'], 'image2': image['3'], 'image3': image['4'], 'image4': image['5']}))
+
+
+@bp_wechat.route('/searchimages', methods=['GET', 'POST'])
+def search_images():
+    pass

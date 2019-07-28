@@ -17,7 +17,7 @@ Page({
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '#'
     })
   },
   onLoad: function () {
@@ -46,29 +46,29 @@ Page({
           })
         }
       })
-    }
+    };
     this.setData({
-      hotimages: ['http://ww1.sinaimg.cn/bmiddle/6af89bc8gw1f8oxvxgc0rg203p02s754.gif',
-        'http://ww2.sinaimg.cn/bmiddle/6af89bc8gw1f8ow49rx2vj205k05kdfn.jpg',
-        'http://ww3.sinaimg.cn/bmiddle/6af89bc8gw1f8ovpurnomg203c03cdhm.gif',
-        'http://ww4.sinaimg.cn/bmiddle/6af89bc8gw1f8owdwwcj5g20dw07ggyt.gif'
+      hotimages: ['http://ww1.sinaimg.cn/bmiddle/9150e4e5gy1g5e74prg4mg206o06ojs9.gif',
+        'http://wx3.sinaimg.cn/bmiddle/006fbYi5gy1g53u1ucvoug306o06oqiu.gif',
+        'http://ww3.sinaimg.cn/bmiddle/9150e4e5gy1g398v3urc6g206b06btyb.gif',
+        'http://wx2.sinaimg.cn/bmiddle/ceeb653ely1g4xhw7xasrg207d054njs.gif'
         ],
-      images1: ['http://ww1.sinaimg.cn/bmiddle/6af89bc8gw1f8ox9w7kk1g203k03kdfz.gif',
-        'http://ww3.sinaimg.cn/bmiddle/6af89bc8gw1f8omjwkqvaj20c80c8jrr.jpg',
-        'http://ww3.sinaimg.cn/bmiddle/6af89bc8gw1f8oomv198hj20c50bojt6.jpg',
-        'http://ww2.sinaimg.cn/bmiddle/6af89bc8gw1f8oon2frvdj20bw0bogmy.jpg'],
-      images2: ['http://ww3.sinaimg.cn/bmiddle/6af89bc8gw1f8or7i7nmbj20bw0ck0u9.jpg',
-        'http://ww4.sinaimg.cn/bmiddle/6af89bc8gw1f8oy6i10ivg203c03c746.gif',
-        'http://ww3.sinaimg.cn/bmiddle/6af89bc8gw1f8ou9spkjhg202s02st8x.gif',
-        'http://ww1.sinaimg.cn/bmiddle/6af89bc8gw1f8oolv24ntj207e06bq34.jpg'],
-      images3: ['http://ww1.sinaimg.cn/bmiddle/6af89bc8gw1f8ovs2gsodj20e407x757.jpg',
-        'http://ww2.sinaimg.cn/bmiddle/6af89bc8gw1f8ol77zltog208c0641kx.gif',
-        'http://ww4.sinaimg.cn/bmiddle/6af89bc8gw1f8oyvh50j5g202s02swf9.gif',
-        'http://ww1.sinaimg.cn/bmiddle/6af89bc8gw1f8oxb3tmn4g2046046dgd.gif'],
-      images4: ['http://ww3.sinaimg.cn/bmiddle/6af89bc8gw1f8oxb01ozsg2046046t9e.gif',
-        'http://ww2.sinaimg.cn/bmiddle/6af89bc8gw1f8p4urkdosg202s02s3yn.gif',
-        'http://ww3.sinaimg.cn/bmiddle/6af89bc8gw1f8ox3u4foeg202s023mwy.gif',
-        'http://ww2.sinaimg.cn/bmiddle/6af89bc8gw1f8oxa47h26g2046046q4f.gif']
+      images1: ['http://wx3.sinaimg.cn/bmiddle/ceeb653ely1g544vkrvwag209o09re6y.gif',
+        'http://wx3.sinaimg.cn/bmiddle/006APoFYly1g4zpcbia67g30a10bdqrw.gif',
+        'http://wx4.sinaimg.cn/bmiddle/78b88159gy1g4d4ypxdpqg207u07uaw4.gif',
+        'http://wx2.sinaimg.cn/bmiddle/006APoFYly1g53wmyuprrg30a70akk91.gif'],
+      images2: ['http://wx3.sinaimg.cn/bmiddle/007742zngy1g58ew2vn9fg308q08qnll.gif',
+        'http://wx3.sinaimg.cn/bmiddle/78b88159ly1g3g2v6fuvtg208c08ch28.gif',
+        'http://wx2.sinaimg.cn/bmiddle/ceeb653ely1g4ilpcjpjqj20hs0hsdhl.jpg',
+        'http://ww2.sinaimg.cn/bmiddle/9150e4e5gw1f8z2spiflfj20k00k0wf2.jpg'],
+      images3: ['http://wx3.sinaimg.cn/bmiddle/ceeb653ely1fss3yxlvtjg204y04o7g2.gif',
+        'http://wx2.sinaimg.cn/bmiddle/78b88159ly1g3kpviouhag20dc0dcgmn.gif',
+        'http://wx2.sinaimg.cn/bmiddle/ab4cb34agy1g4l69bixm2j21400u0gp8.jpg',
+        'http://wx3.sinaimg.cn/bmiddle/006fbYi5gy1g53u1tsv4og308c08cws9.gif'],
+      images4: ['http://wx4.sinaimg.cn/bmiddle/006APoFYly1g50ve1c460g308u08ue4q.gif',
+        'http://ww3.sinaimg.cn/bmiddle/9150e4e5gy1g5dfyz4xpzj20j60j6wgu.jpg',
+        'http://wx3.sinaimg.cn/bmiddle/006APoFYly1g4ymuy2q0ij30hs0hs40w.jpg',
+        'http://wx3.sinaimg.cn/bmiddle/006APoFYly1g5f23gg0iag308v08vqrq.gif']
     })
   },
   getUserInfo: function(e) {
@@ -78,5 +78,19 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  onShareAppMessage: function (res) {
+    var that = this;
+    return {
+      title: '动图表情包',
+      path: "/page/index/index",
+      success: function (res) {
+        console.log("转发成功:" + JSON.stringify(res));
+        that.shareClick();
+      },
+      fail: function (res) {
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
   }
 })
