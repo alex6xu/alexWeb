@@ -24,36 +24,15 @@
         </view>
       </view>
     </view>
-
-    <view class="section">
-      <view class="section__title">全部表情</view>
+    
+    <view class="section__title">全部表情</view>
+    <view class="section" wx:for="{{imageData}}" wx:for-item="images">
       <view class="flex-wrp" style="flex-direction:row;">
-        <view wx:for="{{images1}}">
+        <view wx:for="{{images.images}}">
           <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
         </view>
       </view>
     </view>
 
-    <view class="section">
-      <view class="flex-wrp" style="flex-direction:row;">
-          <view wx:for="{{images2}}">
-          <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
-        </view>
-      </view>
-    </view>
-    <view class="section">
-      <view class="flex-wrp" style="flex-direction:row;">
-        <view wx:for="{{images3}}">
-          <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
-        </view>
-      </view>
-    </view>
-    <view class="section">
-      <view class="flex-wrp" style="flex-direction:row;">
-        <view wx:for="{{images4}}">
-          <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
-        </view>
-      </view>
-    </view>
   </view>
 </view>

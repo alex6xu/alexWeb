@@ -1,13 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/make/make"
   ],
+  
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "表情",
+    "navigationBarTitleText": "表情包",
     "navigationBarTextStyle": "black"
   },
+  "usingComponents": {},
   "sitemapLocation": "sitemap.json"
 }

@@ -32,8 +32,8 @@ class Doutula(scrapy.Spider):
         if content is not None:
             for ct in content:
                 image = ct.find('img', attrs={"referrerpolicy": "no-referrer"})
-                image_url = image['data-original']
-                self.save_pic(image_url)
+                image_url, title = image['data-original'], image['alt']
+                self.save_pic(image_url, title)
 
         commit()
         close()

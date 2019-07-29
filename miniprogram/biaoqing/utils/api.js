@@ -1,8 +1,8 @@
 const utils = require('../utils/util.js');
 
-const API_BASE = 'http://www.doutula.com/index.php/';
-const API_BOOK_SEARCH = `${API_BASE}/search`;
-const API_BOOK_DETAIL = `${API_BASE}/:id`;
+const API_BASE = 'http://api.alexuhui.win/wechat/images';
+const IMAGE_SEARCH = `${API_BASE}/search`;
+const IMAGE_MORE = `${API_BASE}/:id`;
 
 /**
  * 网路请求
@@ -13,6 +13,7 @@ function request(url, data) {
       url: url,
       method: 'GET',
       data: data,
+      timeout: 5,
       success: function (res) {
         if (res.statusCode === 200) {
           resolve(res.data);
@@ -30,17 +31,17 @@ function request(url, data) {
 }
 
 /**
- * 搜索图书
+ * 搜索
  */
-function requestSearchBook(data) {
-  return request(API_BOOK_SEARCH, data);
+function requestSearch(data) {
+  return request(IMAGE_SEARCH, data);
 }
 
 /**
  * 获取图书详细信息
  */
 function requestBookDetail(id, data) {
-  return request(API_BOOK_DETAIL.replace(':id', id), data);
+  return request(IMAGE_MORE.replace(':id', id), data);
 }
 
 /**
@@ -51,6 +52,6 @@ function requestHasTag(tag) {
 }
 
 module.exports = {
-  requestSearchBook: requestSearchBook,
+  requestSearch: requestSearch,
   requestBookDetail: requestBookDetail
 }
