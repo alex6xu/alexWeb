@@ -92,5 +92,13 @@ Page({
         console.log("转发失败:" + JSON.stringify(res));
       }
     }
+  },
+  imgYl: function (evt) {
+    var src = evt.currentTarget.dataset.src;
+    console.log(src);
+    wx.previewImage({
+      current: src,
+      urls: [src]
+    })
   }
 })

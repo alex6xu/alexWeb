@@ -20,7 +20,7 @@
       <view class="section__title">热门表情</view>
       <view class="flex-wrp" style="flex-direction:row;">
         <view wx:for="{{hotimages}}">
-          <image class="flex-item" src="{{item}}" />
+          <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
         </view>
       </view>
     </view>
@@ -29,7 +29,7 @@
       <view class="section__title">全部表情</view>
       <view class="flex-wrp" style="flex-direction:row;">
         <view wx:for="{{images1}}">
-          <image class="flex-item" src="{{item}}" />
+          <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
         </view>
       </view>
     </view>
@@ -37,21 +37,21 @@
     <view class="section">
       <view class="flex-wrp" style="flex-direction:row;">
           <view wx:for="{{images2}}">
-          <image class="flex-item" src="{{item}}" />
+          <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
         </view>
       </view>
     </view>
     <view class="section">
       <view class="flex-wrp" style="flex-direction:row;">
         <view wx:for="{{images3}}">
-          <image class="flex-item" src="{{item}}" />
+          <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
         </view>
       </view>
     </view>
     <view class="section">
       <view class="flex-wrp" style="flex-direction:row;">
         <view wx:for="{{images4}}">
-          <image class="flex-item" src="{{item}}" />
+          <image bindtap="imgYl" class="flex-item" src="{{item}}" data-src="{{item}}" />
         </view>
       </view>
     </view>
