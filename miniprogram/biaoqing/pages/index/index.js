@@ -12,7 +12,7 @@ Page({
     totalRecord: 0, //总数
     isInit: true, //是否第一次进入应用
     loadingMore: false, //是否正在加载更多
-    searchKey: null, //搜索关键字
+    searchKey: "biaoqing", //搜索关键字
     hotimages: [],
     imageData: []
   },
@@ -77,8 +77,8 @@ Page({
     })
   },
   getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+    console.log(e);
+    app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
@@ -88,7 +88,7 @@ Page({
     var that = this;
     return {
       title: '动图表情包',
-      path: "/pages/index/index",
+      path: "pages/index/index",
       success: function (res) {
         console.log("转发成功:" + JSON.stringify(res));
         that.shareClick();
@@ -107,7 +107,7 @@ Page({
     })
   },
   onReachBottom: function () {
-    //!this.data.loadingMore && requestData.call(this);
+    !this.data.loadingMore && requestData.call(this);
   },
   searchInputEvent(e) {
     this.setData({
@@ -152,17 +152,19 @@ function requestData() {
     start: start
   }).then((data) => {
     wx.hideLoading();
-    if (data.total == 0) {
+    if (data.maxEnd == 0) {
+      console.log('response data 0')
       this.setData({
         imageData: false,
         totalRecord: 0
       });
     } else {
+      console.log('response not null')
       this.setData({
         loadingMore: false,
-        imageData: this.data.imageData.concat(data.images),
-        pageIndex: start + 1,
-        totalRecord: data.total
+        imageData: this.data.imageData.concat(api.formatResult(data)),
+        pageIndex: start + 16,
+        totalRecord: data.maxEnd
       });
     }
   }).catch(_ => {
