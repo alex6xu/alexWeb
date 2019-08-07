@@ -39,7 +39,7 @@ function request(url, data) {
  */
 function requestSearch(data) {
   var param =  {
-      "query": data.q + "表情",
+      "query": data.q + ' 表情包',
       "mode":1,
       "start": data.start,
       "reqType": "ajax",
@@ -66,16 +66,28 @@ function formatResult(data){
 
   for(var i=0,len=images.length; i< len; i++){
     var image = images[i];
+    if (!checkImageUrl(image.thumbUrl)){
+      continue;
+    }
     if(ind > 4){
       ind = 1;
       res.push(res1);
       res1 = {'images': []};
     }
-    res1.images.push(image.pic_url);
+    res1.images.push(image.thumbUrl);
     ind += 1;
   }
   // console.log(res);
   return res
+}
+
+function checkImageUrl(url){
+  console.info(url);
+  if ((url.indexOf('sogoucdn') == -1) && (url.indexOf('sinaimg') == -1)){
+    console.log('not vaild');
+    return false;
+  }
+  return true;
 }
 
 module.exports = {

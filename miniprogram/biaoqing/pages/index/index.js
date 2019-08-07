@@ -12,7 +12,7 @@ Page({
     totalRecord: 0, //总数
     isInit: true, //是否第一次进入应用
     loadingMore: false, //是否正在加载更多
-    searchKey: "热门", //搜索关键字
+    searchKey: "", //搜索关键字
     hotimages: [],
     imageData: []
   },
