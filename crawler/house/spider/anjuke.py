@@ -1,7 +1,8 @@
 import scrapy
 from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import Rule
-from Anjuke.items import AnjukeSZSHItem
+from scrapy.spiders import Rule, Request
+# from Anjuke.items import AnjukeSZSHItem
+# from scrapy.loader.
 
 
 class AnjukeSpider(scrapy.spiders.CrawlSpider):

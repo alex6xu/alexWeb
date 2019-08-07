@@ -12,7 +12,7 @@ Page({
     totalRecord: 0, //总数
     isInit: true, //是否第一次进入应用
     loadingMore: false, //是否正在加载更多
-    searchKey: "biaoqing", //搜索关键字
+    searchKey: "热门", //搜索关键字
     hotimages: [],
     imageData: []
   },
@@ -127,7 +127,8 @@ Page({
     }
     this.setData({
       pageIndex: 0,
-      pageData: []
+      imageData: [],
+      hotimages: []
     });
     requestData.call(this);
   },
@@ -159,7 +160,7 @@ function requestData() {
         totalRecord: 0
       });
     } else {
-      console.log('response not null')
+      // console.log('response not null')
       this.setData({
         loadingMore: false,
         imageData: this.data.imageData.concat(api.formatResult(data)),

@@ -16,7 +16,8 @@
   </view>
 
   <view class="page_bd">
-    <view class="section">
+  
+    <view wx:if="{{hotimages.length}}" class="section">
       <view class="section__title">热门表情</view>
       <view class="flex-wrp" style="flex-direction:row;">
         <view wx:for="{{hotimages}}">

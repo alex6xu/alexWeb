@@ -13,12 +13,11 @@ function request(url, data) {
       url: url,
       method: 'GET',
       header: {
-        "Content-Type": "application/json;charset=utf-8",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"
+        "Content-Type": "application/json;charset=utf-8"
         },
       data: data,
       success: function (res) {
-        console.log('req 200');
+        // console.log('req 200');
         if (res.statusCode === 200) {
           resolve(res.data);
         } else
@@ -40,7 +39,7 @@ function request(url, data) {
  */
 function requestSearch(data) {
   var param =  {
-      "query": data.q,
+      "query": data.q + "表情",
       "mode":1,
       "start": data.start,
       "reqType": "ajax",
@@ -63,7 +62,7 @@ function formatResult(data){
   var res = [];
   var ind = 1;
   var res1 = {'images': []};
-  console.log(images.length);
+  // console.log(images.length);
 
   for(var i=0,len=images.length; i< len; i++){
     var image = images[i];
@@ -75,7 +74,7 @@ function formatResult(data){
     res1.images.push(image.pic_url);
     ind += 1;
   }
-  console.log(res);
+  // console.log(res);
   return res
 }
 
