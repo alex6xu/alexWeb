@@ -78,7 +78,7 @@ def editArticles(id):
         db.session.add(article)
         db.session.commit()
         flash(u'博文更新成功！', 'success')
-        return redirect(url_for('admin.manae_articles'))
+        return redirect(url_for('admin.manage_articles'))
     form.source.data = article.source_id
     form.title.data = article.title
     form.content.data = article.content
